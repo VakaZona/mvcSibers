@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models;
 use \Core\View;
 
 class Home extends \Core\Controller
@@ -15,6 +16,8 @@ class Home extends \Core\Controller
 
     public function indexAction()
     {
-        View::renderTemplate('Home/index.twig');
+        $users = Models\User::getAll();
+        View::renderTemplate('Home/index.twig', ['users' => $users]);
     }
+
 }

@@ -3,5 +3,14 @@
 {% block title %} Create new user {% endblock %}
 
 {% block body %}
-Create
+
+    <form action="create" method="post">
+        <p>Username</p>
+        <input type="text" name="username">
+        <p>Password</p>
+        <input type="password" name="password">
+        <p>About user</p>
+        <textarea  cols="30" rows="5" type="text" name="about_user"></textarea><br>
+        <button type="submit">Create</button>
+    </form>
 {% endblock %}
