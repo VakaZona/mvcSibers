@@ -3,5 +3,17 @@
 {% block title %} Update user information {% endblock %}
 
 {% block body %}
-Update
+
+    <form action="update" method="post">
+        {% for user in user %}
+            <input type="hidden" name="id" value="{{ user.id }}">
+            <p>Username</p>
+            <input type="text" name="username" value="{{ user.username }}">
+            <p>Password</p>
+            <input type="text" name="password" value="{{ user.password }}">
+            <p>About User</p>
+            <textarea name="about_user" cols="30" rows="5">{{ user.about_user }}</textarea><br>
+            <button type="submit">Update</button>
+        {% endfor %}
+    </form>
 {% endblock %}

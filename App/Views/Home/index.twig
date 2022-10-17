@@ -3,5 +3,24 @@
 {% block title %} Home {% endblock %}
 
 {% block body %}
-Home
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>About</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.password }}</td>
+                    <td>{{ user.about_user }}</td>
+                    <td><a href="update/index?id= {{ user.id }}">Click</a></td>
+                    <td><a href="delete/delete?id={{ user.id }}">X</a></td>
+                </tr>
+            {% endfor%}
+        </table>
 {% endblock %}
