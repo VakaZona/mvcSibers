@@ -6,11 +6,11 @@
 
     <form action="create" method="post">
         <p>Username</p>
-        <input type="text" name="username">
+        <input type="text" name="username" required>
         <p>Password</p>
-        <input type="password" name="password">
+        <input type="password" name="password" required>
         <p>About user</p>
-        <textarea  cols="30" rows="5" type="text" name="about_user"></textarea><br>
+        <textarea  cols="30" rows="5" type="text" name="about_user" required></textarea><br>
         <button type="submit">Create</button>
     </form>
 {% endblock %}

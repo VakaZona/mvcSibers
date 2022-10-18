@@ -60,4 +60,18 @@ class User extends \Core\Model
         }
     }
 
+    public static function checkLoginUser($username, $password)
+    {
+        $db = static::getDB();
+        $sql = "SELECT * FROM users WHERE username=?";
+        $query = $db->prepare($sql);
+        $query->execute([$username]);
+        $user = $query->fetch(PDO::FETCH_ASSOC);
+        if ($user && password_verify($password, $user['password'])){
+            return $user;
+        } else {
+            return 0;
+        }
+    }
+
 }

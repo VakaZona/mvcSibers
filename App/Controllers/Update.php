@@ -20,6 +20,7 @@ class Update extends \Core\Controller
         $id = $_POST['id'];
         $username = $_POST['username'];
         $password = $_POST['password'];
+        $password = password_hash($password, PASSWORD_DEFAULT);
         $aboutUser = $_POST['about_user'];
         $user = Models\User::updateUser($id, $username, $password, $aboutUser);
         echo 'User successfully update';

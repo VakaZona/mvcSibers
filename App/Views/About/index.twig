@@ -3,5 +3,7 @@
 {% block title %} About a user {% endblock %}
 
 {% block body %}
-About
+    {% for user in user %}
+    <p>{{ user.username }}</p>
+    {% endfor %}
 {% endblock %}

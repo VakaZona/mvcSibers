@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %} {% endblock %}</title>
+    <title>Login</title>
 </head>
 <body>
-<nav>
-    <a href="/home/index">Home</a>
-    <a href="/create/index">Create user</a>
-    <a href="/about/index">About</a>
-    <a href="/logout/logout">Logout</a>
-</nav>
-{% block body %}
-{% endblock %}
+<form action="login" method="post">
+    <p>Login:</p>
+    <input type="text" name="login" required>
+    <p>Password:</p>
+    <input type="text" name="password" required><br><br>
+    <button type="submit" name="log_in">Login</button>
+
+</form>
 </body>
 </html>
